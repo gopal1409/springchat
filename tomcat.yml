@@ -9,8 +9,14 @@
       apt: name=default-jdk state=latest
 
     - name: Adding Group and user for Tomcat.
-      shell: groupadd tomcat && useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
-      
+      group:
+        name: tomcat
+        state: present 
+    - name: add user
+      user:
+        name: tomcat
+        state: present
+        group: tomcat     
     - name: Installating curl.
       apt: name=curl state=latest
       
