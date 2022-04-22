@@ -25,8 +25,9 @@
       args:
         chdir: /tmp
     - name: Creating Apache Tomcat home directory.
-      command: mkdir /opt/tomcat
-      
+      file:
+        path: /opt/tomcat
+        state: directory      
     - name: Extracting Apache Tomcat.
       shell: tar -xzvf /tmp/apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
       
