@@ -1,5 +1,4 @@
-u- hosts: tomcat
-  become: yes
+- hosts: tomcat
   tasks:
 
     - name: update
