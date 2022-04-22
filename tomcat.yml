@@ -1,4 +1,4 @@
-- hosts: tomcat
+- hosts: client
   tasks:
 
     - name: update
